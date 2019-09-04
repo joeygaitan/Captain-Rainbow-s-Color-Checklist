@@ -23,7 +23,7 @@ def update(index,item):
 
 #remove an element from array
 def destroy(index):
-	return checklist.pop(index)
+	checklist.pop(index)
 
 #takes user input
 def user_input(prompt):
@@ -46,8 +46,11 @@ def select(function_code):
     elif function_code == "P":
         list_all_items()
 
+    elif function_code == "D":
+        destroy(int(user_input("Please input an index for an element you would like to delete")))
+
     elif function_code == "Q":
-    	return False
+        return False
 
     else:
         print("Unknown Option")
@@ -55,5 +58,5 @@ def select(function_code):
 running = True
 while running:
     selection = user_input(
-        "Press C to add to list, R to Read from list and P to display list, and Q to Quit")
+        "Press C to add to list, R to Read from list and P to display list, D to delete an elemnt of the and Q to Quit")
     select(selection)
